@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="view_all">view all</string>
+    <string name="select_category">Select Category</string>
+    <string name="phones">Phones</string>
+    <string name="computer">Computer</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="new_sale">New</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="price_with_dollar">$%d</string>
+    <string name="done">Done</string>
+    <string name="filter_options">Filter options</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+</resources>
