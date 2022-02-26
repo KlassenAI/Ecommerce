@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="7dp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,9 +13,9 @@
 
         <ImageView
             android:id="@+id/picture"
-            android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="168dp"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/white_oval"
+            android:background="@drawable/shape_oval"
+            android:backgroundTint="@color/white"
             android:elevation="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_unloved"

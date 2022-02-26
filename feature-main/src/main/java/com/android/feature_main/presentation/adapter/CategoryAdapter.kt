@@ -3,79 +3,54 @@ package com.android.feature_main.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.BlendModeColorFilterCompat
-import androidx.core.graphics.BlendModeCompat
+import com.android.common.extensions.setImage
 import com.android.feature_main.R
 import com.android.feature_main.databinding.ItemCategoryBinding
-import com.android.feature_main.domain.model.CategoryRadio
+import com.android.feature_main.domain.model.HomeStore
 
 class CategoryAdapter(
     private val listener: Listener
-) : GenericAdapter<CategoryRadio, ItemCategoryBinding>() {
+) : GenericAdapter<String, ItemCategoryBinding>() {
 
     interface Listener {
-        fun setCheckedItem(position: Int)
+        fun onItemClick(item: String)
     }
+
+    private val categories = listOf("Phones", "Computers", "Health", "Books")
+    private var selected = categories[0]
 
     init {
-        submitList(
-            listOf(
-                CategoryRadio(R.drawable.ic_phones, "Phones"),
-                CategoryRadio(R.drawable.ic_computers, "Computer"),
-                CategoryRadio(R.drawable.ic_health, "Health"),
-                CategoryRadio(R.drawable.ic_books, "Books")
-            )
-        )
+        submitList(categories)
     }
 
-    private var checkedItem = 0
-
-    fun setCheckedItem(position: Int) {
-        if (checkedItem == position) return
-        val previousCheckedItem = checkedItem
-        checkedItem = position
-        notifyItemChanged(previousCheckedItem)
-        notifyItemChanged(checkedItem)
-    }
-
-    override fun compareItems(old: CategoryRadio, new: CategoryRadio): Boolean = old == new
-
-    override fun createBinding(
-        inflater: LayoutInflater, parent: ViewGroup
-    ): ItemCategoryBinding {
+    override fun createBinding(inflater: LayoutInflater, parent: ViewGroup): ItemCategoryBinding {
         return ItemCategoryBinding.inflate(inflater, parent, false)
     }
 
-    override fun bind(
-        binding: ItemCategoryBinding, itemView: View, item: CategoryRadio, position: Int
-    ) = with(binding) {
-        val drawable = ContextCompat.getDrawable(itemView.context, item.imageId)
-        if (position == checkedItem) {
-            drawable?.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
-                ContextCompat.getColor(itemView.context, R.color.white),
-                BlendModeCompat.SRC_ATOP
-            )
-            image.setBackgroundResource(R.drawable.orange_oval)
-            title.setTextColor(ContextCompat.getColor(itemView.context, R.color.orange))
-        } else {
-            drawable?.colorFilter = BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
-                ContextCompat.getColor(itemView.context, R.color.gray),
-                BlendModeCompat.SRC_ATOP
-            )
-            image.setBackgroundResource(R.drawable.white_oval)
-            title.setTextColor(ContextCompat.getColor(itemView.context, R.color.blue))
-        }
-        image.setImageDrawable(drawable)
+    override fun bind(binding: ItemCategoryBinding, itemView: View, item: String, position: Int) {
 
-        title.text = item.title
-        itemView.setOnClickListener {
-            if (checkedItem == position) return@setOnClickListener
-            listener.setCheckedItem(position)
-            val previousCheckedItem = checkedItem
-            checkedItem = position
-            notifyItemChanged(previousCheckedItem)
-            notifyItemChanged(checkedItem)
+        val icon = when (item) {
+            categories[1] -> R.drawable.ic_computers
+            categories[2] -> R.drawable.ic_health
+            categories[3] -> R.drawable.ic_books
+            else -> R.drawable.ic_phones
         }
+
+        with(binding) {
+            categoryTitle.text = item
+            categoryImage.setImage(icon)
+            categoryTitle.isSelected = item == selected
+            categoryImage.isSelected = item == selected
+
+            categoryImage.setOnClickListener {
+                listener.onItemClick(item)
+                val oldSelected = categories.indexOf(selected)
+                selected = item
+                notifyItemChanged(position)
+                notifyItemChanged(oldSelected)
+            }
+        }
+
+        itemView.setOnClickListener { listener.onItemClick(item) }
     }
 }

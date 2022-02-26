@@ -12,4 +12,16 @@ data class BestSeller(
     @SerializedName("discount_price")
     val discountPrice: Int,
     val picture: String
-)
+) {
+    fun toEntity(mainId: String): BestSellerEntity {
+        return BestSellerEntity(
+            mainId,
+            id,
+            isFavorites,
+            title,
+            priceWithoutDiscount,
+            discountPrice,
+            picture
+        )
+    }
+}

@@ -3,40 +3,29 @@ package com.android.feature_main.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.feature_main.data.network.RetrofitService
-import com.android.feature_main.domain.model.BestSeller
-import com.android.feature_main.domain.model.HomeStore
+import com.android.feature_main.data.HomeRepository
+import com.android.feature_main.domain.model.HomeData
+import com.android.feature_main.domain.repo.IHomeRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 class MainViewModel(
-    private val service: RetrofitService
+    private val repository: HomeRepository
 ) : ViewModel() {
 
-    private val _checkedItem = MutableLiveData(0)
-    val checkedItem: LiveData<Int> get() = _checkedItem
-    fun saveCheckedItem(position: Int) = _checkedItem.postValue(position)
-
-    private val _hotSales = MutableLiveData<List<HomeStore>>()
-    val hotSales: LiveData<List<HomeStore>> get() = _hotSales
-
-    private val _bestSellers = MutableLiveData<List<BestSeller>>()
-    val bestSellers: LiveData<List<BestSeller>> get() = _bestSellers
+    private val _homeData = MutableLiveData<HomeData>()
+    val homeData: LiveData<HomeData> get() = _homeData
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
 
-    fun requestHome() {
+    fun requestHomeData() {
         CoroutineScope(IO + coroutineExceptionHandler).launch {
-            val request = service.requestHome()
-            if (request.isSuccessful) {
-                val result = request.body()!!
-                _hotSales.postValue(result.first().homeStore)
-                _bestSellers.postValue(result.first().bestSeller)
-            }
+            val result = repository.requestHomeData()
+            _homeData.postValue(result)
         }
     }
 }
