@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="32dp">
+
+    <TextView
+        android:id="@+id/capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_10_rectangle"
+        android:backgroundTint="@color/capacity_tint"
+        android:fontFamily="@font/mark_pro_700"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="7dp"
+        android:text="128 gb"
+        android:textColor="@color/capacity_text_color"
+        android:textSize="13sp" />
+
+</FrameLayout>

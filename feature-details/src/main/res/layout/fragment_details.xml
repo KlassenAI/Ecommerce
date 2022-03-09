@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_background"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.DetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_round_10_rectangle"
+            android:backgroundTint="@color/blue"
+            android:paddingStart="15dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="12dp"
+            android:src="@drawable/ic_arrow_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/mark_pro_500"
+            android:gravity="center"
+            android:text="@string/product_details"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btn_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_round_10_rectangle"
+            android:backgroundTint="@color/orange"
+            android:maxWidth="14dp"
+            android:maxHeight="14dp"
+            android:paddingStart="12dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="12dp"
+            android:src="@drawable/ic_cart"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+    <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+        android:id="@+id/image_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        tools:listitem="@layout/product_item" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_top_30_rectangle"
+        android:backgroundTint="@color/white"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="38dp"
+                android:paddingTop="28dp"
+                android:paddingEnd="37dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mark_pro_500"
+                    android:text="Galaxy Note 20 Ultra"
+                    android:textColor="@color/blue"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_heart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_round_10_rectangle"
+                    android:backgroundTint="@color/blue"
+                    android:paddingStart="12dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="11dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/ic_heart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/star_recycler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="7dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RadioGroup
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="30dp"
+                android:checkedButton="@id/btn_check"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/btn_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_background"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/mark_pro_700"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Shop"
+                    android:textColor="@color/tab_text_color"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_background"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Details"
+                    android:textColor="@color/tab_text_color"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/tab_background"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Features"
+                    android:textColor="@color/tab_text_color"
+                    android:textSize="20sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="40dp">
+
+                <TextView
+                    android:id="@+id/cpu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_cpu"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/product_details_text"
+                    android:textSize="11sp"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+                <TextView
+                    android:id="@+id/camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_camera"
+                    android:drawablePadding="9dp"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/product_details_text"
+                    android:textSize="11sp"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+                <TextView
+                    android:id="@+id/ssd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_ssd"
+                    android:drawablePadding="9dp"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/product_details_text"
+                    android:textSize="11sp"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+                <TextView
+                    android:id="@+id/sd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_sd"
+                    android:drawablePadding="9dp"
+                    android:fontFamily="@font/mark_pro_400"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/product_details_text"
+                    android:textSize="11sp"
+                    tools:ignore="UseCompatTextViewDrawableXml" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="29dp"
+                android:fontFamily="@font/mark_pro_500"
+                android:text="@string/select_color_and_capacity"
+                android:textColor="@color/blue"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="33dp"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/color_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/capacity_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/shape_round_10_rectangle"
+                android:backgroundTint="@color/orange"
+                android:fontFamily="@font/mark_pro_700"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

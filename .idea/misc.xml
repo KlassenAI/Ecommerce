@@ -29,10 +29,29 @@
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/app/src/main/res/layout/item_category.xml" value="0.371875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/app/src/main/res/layout/item_hot_sales.xml" value="0.25" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/app/src/main/res/layout/item_spinner.xml" value="0.371875" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/core/src/main/res/drawable/shape_oval.xml" value="0.275" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/core/src/main/res/drawable/shape_round_10_rectangle.xml" value="0.3725" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/core/src/main/res/drawable/shape_round_top_30_rectangle.xml" value="0.3725" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-cart/src/main/res/drawable/ic_add.xml" value="0.2985" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-cart/src/main/res/drawable/shape_round_26_rectangle.xml" value="0.2985" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-cart/src/main/res/layout/basket_item.xml" value="0.33" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-cart/src/main/res/layout/fragment_cart.xml" value="0.33" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/drawable/shape_checked_tab.xml" value="0.275" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/drawable/shape_tab.xml" value="0.275" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/drawable/tab_background.xml" value="0.275" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/font/tab_font_family.xml" value="0.40208333333333335" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/capacity_item.xml" value="2.0" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/color_item.xml" value="0.9" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/data_item.xml" value="0.75" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/fragment_details.xml" value="0.4905897114178168" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/product_item.xml" value="0.33" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/star_item.xml" value="0.371875" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/tab_font_family.xml" value="0.371875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/background_spinner_main.xml" value="0.1185" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/background_spinner_popup.xml" value="0.1185" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/blue_background.xml" value="0.2875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/filter_spinner_background.xml" value="0.3505" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/footer.xml" value="0.275" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/ic_books.xml" value="0.146" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/ic_computers.xml" value="0.146" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/ic_down_arrow.xml" value="0.28" />
@@ -53,9 +72,10 @@
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/share_oval.xml" value="0.2875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/white_background.xml" value="0.2875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/drawable/white_oval.xml" value="0.274" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/font/tab_font.xml" value="0.40208333333333335" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/bottom_sheet_filter.xml" value="0.371875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/dialog_filter.xml" value="0.75" />
-        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/fragment_main.xml" value="0.36310025273799496" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/fragment_main.xml" value="0.5" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_best_seller.xml" value="1.0" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_category.xml" value="1.25" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_hot_sales.xml" value="0.33" />

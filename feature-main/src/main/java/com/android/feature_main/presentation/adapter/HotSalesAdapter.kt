@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.view.isVisible
-import com.android.common.extensions.setImage
+import com.android.core.extensions.setImage
+import com.android.core.ui.GenericAdapter
 import com.android.feature_main.databinding.ItemHotSalesBinding
-import com.android.feature_main.domain.model.BestSeller
 import com.android.feature_main.domain.model.HomeStore
 
 class HotSalesAdapter(

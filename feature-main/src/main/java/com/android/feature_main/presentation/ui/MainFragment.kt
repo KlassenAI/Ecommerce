@@ -1,13 +1,20 @@
 package com.android.feature_main.presentation.ui
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.android.common.extensions.init
+import com.android.core.extensions.init
+import com.android.core.extensions.navigate
+import com.android.core.extensions.showToast
+import com.android.core.navigation.NavCommand
+import com.android.core.navigation.NavCommands
+import com.android.core.utils.Constants
 import com.android.feature_main.presentation.adapter.BestSellerAdapter
 import com.android.feature_main.presentation.adapter.CategoryAdapter
 import com.android.feature_main.R
@@ -16,7 +23,6 @@ import com.android.feature_main.domain.model.BestSeller
 import com.android.feature_main.domain.model.HomeStore
 import com.android.feature_main.presentation.adapter.HotSalesAdapter
 import com.android.feature_main.presentation.viewmodel.MainViewModel
-import com.android.feature_main.utils.Constants
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
@@ -45,10 +51,6 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
         }
     }
 
-    private fun showToast(text: String) {
-        Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initObservers()
@@ -61,6 +63,10 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
             hotSalesAdapter.submitList(it.homeStores)
             bestSellerAdapter.submitList(it.bestSellers)
         }
+        viewModel.productCount.observe(viewLifecycleOwner) {
+            binding.productCount.text = it.toString()
+            binding.productCount.isVisible = it > 0
+        }
     }
 
     private fun initListeners() = with(binding) {
@@ -71,7 +77,17 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
         btnSearchQr.setOnClickListener { showToast("Search qr") }
         btnSeeMoreHotSales.setOnClickListener { showToast("See more hot sales") }
         btnSeeMoreBestSellers.setOnClickListener { showToast("See more best sellers") }
-        btnCart.setOnClickListener { showToast("Navigate to cart") }
+        btnCart.setOnClickListener {
+            navigate(
+                NavCommand(
+                    target = NavCommands.DeepLink(
+                        url = Uri.parse("jetnavapp://cart"),
+                        isModal = false,
+                        isSingleTop = true
+                    )
+                )
+            )
+        }
         btnHeart.setOnClickListener { showToast("Navigate to favorites") }
         btnAccount.setOnClickListener { showToast("Navigate to account") }
     }
@@ -99,6 +115,14 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
     }
 
     override fun onItemClick(item: BestSeller) {
-        showToast("Clicked $item")
+        navigate(
+            NavCommand(
+                target = NavCommands.DeepLink(
+                    url = Uri.parse("jetnavapp://details"),
+                    isModal = false,
+                    isSingleTop = true
+                )
+            )
+        )
     }
 }

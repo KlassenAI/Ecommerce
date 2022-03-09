@@ -3,10 +3,10 @@ package com.android.feature_main.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.common.extensions.setImage
+import com.android.core.extensions.setImage
+import com.android.core.ui.GenericAdapter
 import com.android.feature_main.R
 import com.android.feature_main.databinding.ItemCategoryBinding
-import com.android.feature_main.domain.model.HomeStore
 
 class CategoryAdapter(
     private val listener: Listener

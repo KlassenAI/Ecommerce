@@ -1,10 +1,11 @@
 package com.android.feature_main.data.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.android.core.utils.Constants
 import com.android.feature_main.domain.model.BestSellerEntity
 import com.android.feature_main.domain.model.HomeData
 import com.android.feature_main.domain.model.HomeStoreEntity
-import com.android.feature_main.utils.Constants
 
 @Dao
 interface MainDao {
@@ -43,4 +44,7 @@ interface MainDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addBestSellers(bestSellers: List<BestSellerEntity>)
+
+    @Query("SELECT COUNT(*) FROM ${Constants.DB_TABLE_PRODUCTS}")
+    fun getProductCount(): LiveData<Int>
 }

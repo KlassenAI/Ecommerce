@@ -2,14 +2,15 @@ package com.android.feature_main.data
 
 import android.content.Context
 import androidx.core.content.edit
+import androidx.lifecycle.LiveData
+import com.android.core.utils.Constants
 import com.android.feature_main.data.db.MainDao
-import com.android.feature_main.data.network.RetrofitService
+import com.android.feature_main.data.network.MainService
 import com.android.feature_main.domain.model.HomeData
 import com.android.feature_main.domain.repo.IHomeRepository
-import com.android.feature_main.utils.Constants
 
 class HomeRepository(
-    private val service: RetrofitService,
+    private val service: MainService,
     private val dao: MainDao,
     context: Context
 ) : IHomeRepository {
@@ -45,4 +46,6 @@ class HomeRepository(
     override suspend fun getHomeData(mainId: String): HomeData {
         return dao.getHomeData(mainId)
     }
+
+    override fun getProductCount(): LiveData<Int> = dao.getProductCount()
 }

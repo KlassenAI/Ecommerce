@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import com.android.core.utils.Constants
 import com.android.feature_main.databinding.DialogFilterBinding
-import com.android.feature_main.utils.Constants
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class FilterDialog : BottomSheetDialogFragment() {

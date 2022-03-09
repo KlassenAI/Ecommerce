@@ -3,7 +3,7 @@ package com.android.feature_main.domain.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.android.feature_main.utils.Constants
+import com.android.core.utils.Constants
 
 @Entity(tableName = Constants.DB_TABLE_HOME_STORES)
 data class HomeStoreEntity(

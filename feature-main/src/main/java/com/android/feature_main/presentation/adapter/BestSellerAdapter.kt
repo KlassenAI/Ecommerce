@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import com.android.common.extensions.setImage
+import com.android.core.extensions.setImage
+import com.android.core.ui.GenericAdapter
 import com.android.feature_main.R
 import com.android.feature_main.databinding.ItemBestSellerBinding
 import com.android.feature_main.domain.model.BestSeller

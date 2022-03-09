@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_background"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.CartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_round_10_rectangle"
+            android:backgroundTint="@color/blue"
+            android:paddingStart="15dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="12dp"
+            android:src="@drawable/ic_arrow_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/mark_pro_500"
+            android:gravity="end"
+            android:paddingEnd="9dp"
+            android:text="@string/add_address"
+            android:textColor="@color/blue"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/btn_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_round_10_rectangle"
+            android:backgroundTint="@color/orange"
+            android:maxWidth="14dp"
+            android:maxHeight="14dp"
+            android:paddingStart="12dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="12dp"
+            android:src="@drawable/ic_navigation"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription,UseAppTint" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/mark_pro_700"
+        android:text="@string/my_cart"
+        android:textColor="@color/blue"
+        android:textSize="35sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_round_top_30_rectangle"
+        android:backgroundTint="@color/blue"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            tools:ignore="NestedWeights" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="35dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="26dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/total"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery"
+                    android:layout_weight="1"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/shape_round_10_rectangle"
+            android:backgroundTint="@color/orange"
+            android:fontFamily="@font/mark_pro_700"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="@string/checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
