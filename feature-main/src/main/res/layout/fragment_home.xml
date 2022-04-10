@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:overScrollMode="never"
-        tools:context=".presentation.ui.MainFragment">
+        tools:context=".presentation.ui.HomeFragment">
 
         <LinearLayout
             android:layout_width="match_parent"

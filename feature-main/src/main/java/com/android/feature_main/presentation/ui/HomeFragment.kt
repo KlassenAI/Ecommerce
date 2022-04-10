@@ -1,46 +1,41 @@
 package com.android.feature_main.presentation.ui
 
-import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.android.core.extensions.init
-import com.android.core.extensions.navigate
-import com.android.core.extensions.showToast
-import com.android.core.navigation.NavCommand
-import com.android.core.navigation.NavCommands
+import com.android.core.extensions.*
 import com.android.core.utils.Constants
-import com.android.feature_main.presentation.adapter.BestSellerAdapter
-import com.android.feature_main.presentation.adapter.CategoryAdapter
 import com.android.feature_main.R
-import com.android.feature_main.databinding.FragmentMainBinding
+import com.android.feature_main.databinding.FragmentHomeBinding
 import com.android.feature_main.domain.model.BestSeller
 import com.android.feature_main.domain.model.HomeStore
+import com.android.feature_main.presentation.adapter.BestSellerAdapter
+import com.android.feature_main.presentation.adapter.CategoryAdapter
 import com.android.feature_main.presentation.adapter.HotSalesAdapter
-import com.android.feature_main.presentation.viewmodel.MainViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.android.feature_main.presentation.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
+class HomeFragment : Fragment(R.layout.fragment_home), CategoryAdapter.Listener,
     HotSalesAdapter.Listener, BestSellerAdapter.Listener {
 
-    private val viewModel: MainViewModel by viewModel()
-    private val binding: FragmentMainBinding by viewBinding()
+    private val viewModel: HomeViewModel by sharedViewModel()
+    private val binding: FragmentHomeBinding by viewBinding()
     private val categoryAdapter = CategoryAdapter(this)
     private val hotSalesAdapter = HotSalesAdapter(this)
     private val bestSellerAdapter = BestSellerAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("VM", "fragment: $viewModel")
         initData()
     }
 
     private fun initData() {
-        viewModel.requestHomeData()
         childFragmentManager.setFragmentResultListener(
             Constants.KEY_DIALOG_FILTER, this
         ) { _, bundle ->
@@ -60,6 +55,10 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
 
     private fun initObservers() {
         viewModel.homeData.observe(viewLifecycleOwner) {
+            if (it == null) {
+                showToast("Ошибка загрузки данных")
+                return@observe
+            }
             hotSalesAdapter.submitList(it.homeStores)
             bestSellerAdapter.submitList(it.bestSellers)
         }
@@ -70,6 +69,7 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
     }
 
     private fun initListeners() = with(binding) {
+        navigationTitle.setOnClickListener { navigateToMap() }
         btnFilter.setOnClickListener {
             FilterDialog().show(childFragmentManager, Constants.TAG_DIALOG_FILTER)
         }
@@ -77,17 +77,7 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
         btnSearchQr.setOnClickListener { showToast("Search qr") }
         btnSeeMoreHotSales.setOnClickListener { showToast("See more hot sales") }
         btnSeeMoreBestSellers.setOnClickListener { showToast("See more best sellers") }
-        btnCart.setOnClickListener {
-            navigate(
-                NavCommand(
-                    target = NavCommands.DeepLink(
-                        url = Uri.parse("jetnavapp://cart"),
-                        isModal = false,
-                        isSingleTop = true
-                    )
-                )
-            )
-        }
+        btnCart.setOnClickListener { navigateToCart() }
         btnHeart.setOnClickListener { showToast("Navigate to favorites") }
         btnAccount.setOnClickListener { showToast("Navigate to account") }
     }
@@ -115,14 +105,6 @@ class MainFragment : Fragment(R.layout.fragment_main), CategoryAdapter.Listener,
     }
 
     override fun onItemClick(item: BestSeller) {
-        navigate(
-            NavCommand(
-                target = NavCommands.DeepLink(
-                    url = Uri.parse("jetnavapp://details"),
-                    isModal = false,
-                    isSingleTop = true
-                )
-            )
-        )
+        navigateToDetails()
     }
 }

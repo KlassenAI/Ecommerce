@@ -7,11 +7,13 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.android.feature_main.presentation.ui.MainFragment"
+        android:name="com.android.feature_main.presentation.ui.HomeFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_home">
 
-        <deepLink app:uri="jetnavapp://main" />
+        <deepLink app:uri="@string/nav_path_https_home" />
+        <deepLink app:uri="@string/nav_path_http_home" />
+        <deepLink app:uri="@string/nav_path_home" />
 
     </fragment>
 

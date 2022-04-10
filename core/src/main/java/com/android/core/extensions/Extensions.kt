@@ -1,5 +1,7 @@
 package com.android.core.extensions
 
+import android.app.Activity
+import android.net.Uri
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
@@ -8,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+import com.android.core.R
 import com.android.core.navigation.NavCommand
+import com.android.core.navigation.NavCommands
 import com.android.core.navigation.NavigationProvider
 import com.bumptech.glide.Glide
 
@@ -29,8 +33,22 @@ fun <VH : RecyclerView.ViewHolder?> RecyclerView.init(
     adapter = paramAdapter
 }
 
-fun Fragment.navigate(navCommand: NavCommand) {
-    (requireActivity() as? NavigationProvider)?.launch(navCommand)
+fun Fragment.navigateToCart() = navigate(getString(R.string.nav_path_cart))
+fun Fragment.navigateToDetails() = navigate(getString(R.string.nav_path_details))
+fun Fragment.navigateToMap() = navigate(getString(R.string.nav_path_map))
+
+private fun Fragment.navigate(path: String) {
+    (requireActivity() as? NavigationProvider)?.launch(getNavCommand(path))
+}
+
+fun getNavCommand(path: String): NavCommand {
+    return NavCommand(
+        target = NavCommands.DeepLink(
+            url = Uri.parse(path),
+            isModal = false,
+            isSingleTop = true
+        )
+    )
 }
 
 fun ImageView.setImage(url: String) {

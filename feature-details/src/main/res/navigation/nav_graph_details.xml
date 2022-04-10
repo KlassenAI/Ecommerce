@@ -10,7 +10,9 @@
         android:name="com.android.feature_details.presentation.ui.DetailsFragment"
         tools:layout="@layout/fragment_details">
 
-        <deepLink app:uri="jetnavapp://details" />
+        <deepLink app:uri="@string/nav_path_https_details" />
+        <deepLink app:uri="@string/nav_path_http_details" />
+        <deepLink app:uri="@string/nav_path_details" />
 
     </fragment>
 

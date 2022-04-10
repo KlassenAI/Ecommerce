@@ -43,7 +43,7 @@
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/capacity_item.xml" value="2.0" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/color_item.xml" value="0.9" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/data_item.xml" value="0.75" />
-        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/fragment_details.xml" value="0.4905897114178168" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/fragment_details.xml" value="0.22" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/product_item.xml" value="0.33" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/star_item.xml" value="0.371875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-details/src/main/res/layout/tab_font_family.xml" value="0.371875" />
@@ -75,11 +75,13 @@
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/font/tab_font.xml" value="0.40208333333333335" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/bottom_sheet_filter.xml" value="0.371875" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/dialog_filter.xml" value="0.75" />
-        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/fragment_main.xml" value="0.5" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/fragment_main.xml" value="0.2962962962962963" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_best_seller.xml" value="1.0" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_category.xml" value="1.25" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_hot_sales.xml" value="0.33" />
         <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-main/src/main/res/layout/item_spinner.xml" value="0.371875" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-map/src/main/res/layout/fragment_map.xml" value="0.371875" />
+        <entry key="..\:/Users/Aleksandr/AndroidStudioProjects/MyProjects/Ecommerce/feature-map/src/main/res/layout/fragment_maps.xml" value="0.22" />
       </map>
     </option>
   </component>

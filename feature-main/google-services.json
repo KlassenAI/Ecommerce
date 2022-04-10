@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "490861530746",
+    "firebase_url": "https://ecommerce-d5cce-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ecommerce-d5cce",
+    "storage_bucket": "ecommerce-d5cce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490861530746:android:13f8a86efc0e909adbf5c3",
+        "android_client_info": {
+          "package_name": "com.android.feature_main"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490861530746-pu5tfshetorb7qdh91dchc6gbtiddi2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALwSmaB7GoSK-b1OGimWMEY6s8S-KXPPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490861530746-pu5tfshetorb7qdh91dchc6gbtiddi2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

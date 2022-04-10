@@ -10,7 +10,9 @@
         android:name="com.android.feature_cart.presentation.ui.CartFragment"
         tools:layout="@layout/fragment_cart">
 
-        <deepLink app:uri="jetnavapp://cart" />
+        <deepLink app:uri="@string/nav_path_https_cart" />
+        <deepLink app:uri="@string/nav_path_http_cart" />
+        <deepLink app:uri="@string/nav_path_cart" />
 
     </fragment>
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nav_path_default">www.ecommerce.com</string>
+
+    <string name="nav_path_https_home">https://www.ecommerce.com/home</string>
+    <string name="nav_path_http_home">http://www.ecommerce.com/home</string>
+    <string name="nav_path_home">ecommerce://home</string>
+
+    <string name="nav_path_https_cart">https://www.ecommerce.com/cart</string>
+    <string name="nav_path_http_cart">http://www.ecommerce.com/cart</string>
+    <string name="nav_path_cart">ecommerce://cart</string>
+
+    <string name="nav_path_https_details">https://www.ecommerce.com/details</string>
+    <string name="nav_path_http_details">http://www.ecommerce.com/details</string>
+    <string name="nav_path_details">ecommerce://details</string>
+
+    <string name="nav_path_map">ecommerce://map</string>
+
+</resources>

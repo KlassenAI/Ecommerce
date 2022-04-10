@@ -8,7 +8,7 @@ import com.android.feature_main.domain.model.HomeData
 import com.android.feature_main.domain.model.HomeStoreEntity
 
 @Dao
-interface MainDao {
+interface HomeDao {
 
     @Transaction
     suspend fun getHomeData(mainId: String): HomeData {

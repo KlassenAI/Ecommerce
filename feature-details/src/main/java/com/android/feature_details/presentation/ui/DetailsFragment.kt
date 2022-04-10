@@ -60,17 +60,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private fun initListeners() = with(binding) {
         btnBack.setOnClickListener { navigateUp() }
-        btnCart.setOnClickListener {
-            navigate(
-                NavCommand(
-                    target = NavCommands.DeepLink(
-                        url = Uri.parse("jetnavapp://cart"),
-                        isModal = false,
-                        isSingleTop = true
-                    )
-                )
-            )
-        }
+        btnCart.setOnClickListener { navigateToCart() }
         btnHeart.setOnClickListener { showToast("click heart") }
         btnAdd.setOnClickListener {
             if (colorAdapter.selected == null) {

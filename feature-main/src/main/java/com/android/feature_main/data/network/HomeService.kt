@@ -5,7 +5,7 @@ import com.android.feature_main.domain.model.HomeData
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
-interface MainService {
+interface HomeService {
 
     @Headers("x-apikey: $API_KEY")
     @GET("/rest/home")

@@ -1,18 +1,24 @@
 package com.android.feature_main.domain.model
 
+import com.google.firebase.database.PropertyName
 import com.google.gson.annotations.SerializedName
 
 data class BestSeller(
-    val id: Int,
+    var id: Int,
     @SerializedName("is_favorites")
-    val isFavorites: Boolean,
-    val title: String,
+    @get: PropertyName("is_favorites") @set: PropertyName("is_favorites")
+    var isFavorites: Boolean,
+    var title: String,
     @SerializedName("price_without_discount")
-    val priceWithoutDiscount: Int,
+    @get: PropertyName("price_without_discount") @set: PropertyName("price_without_discount")
+    var priceWithoutDiscount: Int,
     @SerializedName("discount_price")
-    val discountPrice: Int,
-    val picture: String
+    @get: PropertyName("discount_price") @set: PropertyName("discount_price")
+    var discountPrice: Int,
+    var picture: String
 ) {
+    constructor(): this(0, false, "", 0, 0, "")
+
     fun toEntity(mainId: String): BestSellerEntity {
         return BestSellerEntity(
             mainId,

@@ -3,7 +3,7 @@ package com.android.ecommerce.data.network
 import com.android.core.utils.Constants
 import com.android.feature_cart.data.network.CartService
 import com.android.feature_details.data.network.DetailsService
-import com.android.feature_main.data.network.MainService
+import com.android.feature_main.data.network.HomeService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -29,7 +29,7 @@ object RetrofitInstance {
             .build()
     }
 
-    fun getMainService(builder: Retrofit): MainService = builder.create(MainService::class.java)
+    fun getMainService(builder: Retrofit): HomeService = builder.create(HomeService::class.java)
     fun getDetailsService(builder: Retrofit): DetailsService = builder.create(DetailsService::class.java)
     fun getCartService(builder: Retrofit): CartService = builder.create(CartService::class.java)
 }

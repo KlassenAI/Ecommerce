@@ -9,7 +9,7 @@ import com.android.core.utils.Constants
 import com.android.core.model.ProductEntity
 import com.android.feature_cart.data.db.CartDao
 import com.android.feature_details.data.db.DetailsDao
-import com.android.feature_main.data.db.MainDao
+import com.android.feature_main.data.db.HomeDao
 import com.android.feature_main.domain.model.BestSellerEntity
 import com.android.feature_main.domain.model.HomeStoreEntity
 
@@ -27,7 +27,7 @@ import com.android.feature_main.domain.model.HomeStoreEntity
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun mainDao(): MainDao
+    abstract fun mainDao(): HomeDao
     abstract fun detailsDao(): DetailsDao
     abstract fun cartDao(): CartDao
 
@@ -39,7 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
             ).build()
         }
 
-        fun getMainDao(database: AppDatabase): MainDao = database.mainDao()
+        fun getMainDao(database: AppDatabase): HomeDao = database.mainDao()
         fun getDetailsDao(database: AppDatabase): DetailsDao = database.detailsDao()
         fun getCartDao(database: AppDatabase): CartDao = database.cartDao()
     }

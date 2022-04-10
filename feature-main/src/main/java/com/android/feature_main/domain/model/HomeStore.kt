@@ -1,17 +1,22 @@
 package com.android.feature_main.domain.model
 
+import com.google.firebase.database.PropertyName
 import com.google.gson.annotations.SerializedName
 
 data class HomeStore(
-    val id: Int,
+    var id: Int,
     @SerializedName("is_new")
-    val isNew: Boolean,
-    val title: String,
-    val subtitle: String,
-    val picture: String,
+    @get: PropertyName("is_new") @set: PropertyName("is_new")
+    var isNew: Boolean,
+    var title: String,
+    var subtitle: String,
+    var picture: String,
     @SerializedName("is_buy")
-    val isBuy: Boolean
+    @get: PropertyName("is_buy") @set: PropertyName("is_buy")
+    var isBuy: Boolean
 ) {
+    constructor(): this(0, false, "", "", "", false)
+
     fun toEntity(mainId: String): HomeStoreEntity {
         return HomeStoreEntity(
             mainId,

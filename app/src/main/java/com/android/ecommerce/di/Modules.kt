@@ -12,9 +12,9 @@ import com.android.feature_details.data.db.DetailsDao
 import com.android.feature_details.data.network.DetailsService
 import com.android.feature_details.presentation.viewmodel.DetailsViewModel
 import com.android.feature_main.data.HomeRepository
-import com.android.feature_main.data.db.MainDao
-import com.android.feature_main.data.network.MainService
-import com.android.feature_main.presentation.viewmodel.MainViewModel
+import com.android.feature_main.data.db.HomeDao
+import com.android.feature_main.data.network.HomeService
+import com.android.feature_main.presentation.viewmodel.HomeViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -36,11 +36,11 @@ val appModule = module {
     single<CoroutineExceptionHandler> { ExceptionHandler.get() }
 }
 
-val mainModule = module {
-    single<MainService> { RetrofitInstance.getMainService(get()) }
-    single<MainDao> { AppDatabase.getMainDao(get()) }
+val homeModule = module {
+    single<HomeService> { RetrofitInstance.getMainService(get()) }
+    single<HomeDao> { AppDatabase.getMainDao(get()) }
     single<HomeRepository> { HomeRepository(get(), get(), get()) }
-    viewModel<MainViewModel> { MainViewModel(get(), get()) }
+    viewModel<HomeViewModel> { HomeViewModel(get(), get()) }
 }
 
 val detailsModule = module {

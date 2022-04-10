@@ -6,6 +6,7 @@ object Constants {
 
     const val SHARED_PREF_SETTINGS = "settings"
     const val PREF_KEY_MAIN_ID = "mainId"
+    const val PREF_KEY_MAIN_ID_2 = "mainId2"
     const val DB_NAME = "mainData"
     const val DB_TABLE_BEST_SELLERS = "bestSellers"
     const val DB_TABLE_HOME_STORES = "homeStores"
